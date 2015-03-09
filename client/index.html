@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <h1>Welcome to Startupmash</h1>  
+    <h2>Round 1 - Name the Founders</h2>
+
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
-     below them until after the scripts load-->
+    below them until after the scripts load-->
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
 
     <script src="data/data.js"></script>
-
+    
+    <script src="models/EmployeeModel.js"></script>
     <script src="models/SongModel.js"></script>
     <script src="collections/Songs.js"></script>
     <script src="collections/SongQueue.js"></script>
@@ -23,6 +27,7 @@
 
     <script>
       $(function(){
+        
         // set up model objects
         var library = new Songs(songData);
         var app = new AppModel({library: library});

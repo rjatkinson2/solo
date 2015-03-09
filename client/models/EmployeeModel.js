@@ -20,8 +20,9 @@ var employeeModel = new EmployeeModel();
 
 employeeModel.fetch({
   success: function(model) {
+    console.log(employeeModel.get('attributes'));
     console.log(model);
-    console.log('omg success!');
+    console.log('success!');
     console.log(model.get('attributes'));
   },
   error: function(model, xhr, options) {

@@ -1,8 +1,49 @@
-body{
-  margin: 0,
-  padding: 0
+h1,h2,h3,h4,h5,h6,p{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 200;
+  color: white;
+}
+
+h1{
+  display: inline;
+}
+
+h2{
+  padding: 50px;
 }
 
 div.search{
   background-color: #264249;
+  padding: 5.0em 0;
+}
+
+.startupView{
+  padding-left: 30px;
+  background-color: #18A497;
+}
+
+input[type=text] {
+  background: none;
+  border: none;
+  box-shadow: none;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 26px;
+  color: #FFFFFF;
+  line-height: 31px;
+  border-bottom: 1px solid #FFFFFF;
+  display: inline-block;
+  width: 100%;
+}
+
+h2{
+
+}
+
+
+input#search{
+  padding-top: .5em;
+  padding-left: 20px;
+  padding-bottom: 5px;
 }

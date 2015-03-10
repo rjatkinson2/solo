@@ -3,10 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <title>Startupmash | Welcome</title>
+        <link href='http://fonts.googleapis.com/css?family=Exo+2:200italic,200' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/foundation.css" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
@@ -14,20 +15,25 @@
     </head>
   <body>
     <div class="search">
-      <h1>Welcome to Startupmash</h1>
-      <h2>Select a company</h2>
-      <form action="" id="search-form">
-        <input type="text" id="search" name="search" />
-        <input type="submit" id="search-submit" value="Pick Your Company!" />
-      </form>
+      <div class="row">
+        <div class="large-4 columns">
+          <h1>Startup</h1><h1 style="color: #FF755A">mash</h2>
+        </div>
+        <div class="large-8 columns">
+          <form action="" id="search-form">
+            <input type="text" id="search" name="search" placeholder="Tell Startupmash the name of your dream startup!"/>
+            <input type="submit" id="search-submit" value="Pick Your Company!" style="display:none" />
+          </form>
+        </div>
+      </div>
     </div>
     <div class="round one">
     </div>
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
     below them until after the scripts load-->
-    <script src="bower_components/jquery/jquery.min.js"></script>
-    <script src="bower_components/underscore/underscore.js"></script>
-    <script src="bower_components/backbone/backbone.js"></script>
+    <script src="../bower_components/jquery/jquery.min.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/backbone/backbone.js"></script>
     <script src="models/CompanyModel.js"></script>
 
     <!----------------------------- Data ----------------------------->
@@ -94,7 +100,7 @@
                       // put the view onto the screen
                       console.log(startupView);
                       console.log(startupView.foundersView);
-                      $('div.one').empty().append(startupView.render(startupView.foundersView.render('Not Complete!'))).slideDown('slow');
+                      $('div.one').empty().append(startupView.render(startupView.foundersView.render('Not Complete!')));
                     
                     }
                   });

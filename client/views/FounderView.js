@@ -3,8 +3,9 @@ var FounderView = Backbone.View.extend({
   // defaults:{
   //   correct: false
   // },
+  tagName: 'li',
 
-  template: _.template('<img src="<%= image %>"><input class="guess" placeholder="guess the name..."></input><p><%- correct %></p>'),
+  template: _.template('<img src="<%= image %>"><input type="text" class="guess" placeholder="guess the name..."></input><p><%- correct %></p>'),
 
   events: {
     'change input.guess': function() {

@@ -28,6 +28,7 @@
     <script src="collections/Team.js"></script>
     <!-- Founder Models -->
     <script src="models/FounderModel.js"></script>
+    <script src="collections/FoundersCollection.js"></script>
     <script src="collections/Founders.js"></script>
     <!-- Startup Model -->
     <script src="models/StartupModel.js"></script>
@@ -45,24 +46,49 @@
     <script>
       $(function(){
         var company;
+        var founders;
+        var team;
 
         $("#search-form").submit(function(e){
           e.preventDefault();
           var input = $("#search");
-          company = new CompanyModel({'query' : 'query='+ input.val() +'&type=Startup'});
-          company.fetch({dataType: "jsonp"});
+          company = new CompanyModel({'query' : 'search?query='+ input.val() +'&type=Startup'});
+          company.fetch({
+            dataType: "jsonp",
+            success: function(stuff){
+
+              round1 = new FoundersCollection({'query' : 'startups/'+ stuff.get('id') +'/roles?role=founder'});
+              round2 = new FoundersCollection({'query' : 'startups/'+ stuff.get('id') +'/roles?role=employee'});
+              round2 = new FoundersCollection({'query' : 'startups/'+ stuff.get('id') +'/roles?role=employee'});
+              
+              round1.fetch({
+                dataType: "jsonp",
+                success: function(collection, resp){
+
+                  founders = new Founders(resp.startup_roles);
+
+                  round2.fetch({
+                    dataType: "jsonp",
+                    success: function(collection, resp){
+                      
+                      team = new Team(resp.startup_roles);
+                      var startupModel = new StartupModel({company: company, founders: founders, team: team});
+
+                      // build a view for the top level of the whole app
+                      var startupView = new StartupView({model: startupModel});
+
+                      // put the view onto the screen
+                      $('div.one').append(startupView.render());
+                    
+                    }
+                  });
+
+                }
+              });
+            }
+          });
           input.val('');
         });
-        
-        var founders = new Founders(founderData);
-        var team = new Team(teamData);
-        var startupModel = new StartupModel({company: company, founders: founders, team: team});
-
-        // build a view for the top level of the whole app
-        var startupView = new StartupView({model: startupModel});
-
-        // put the view onto the screen
-        $('div.one').append(startupView.render());
       });
     </script>
   </body>

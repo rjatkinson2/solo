@@ -1,5 +1,7 @@
-var CompanyModel = Backbone.Model.extend({
+var FoundersCollection = Backbone.Model.extend({
+  model: FounderModel,
   initialize: function(params){
+    this.on('success', this.updates, this);
     this.on('change', function(model){
       console.log(model);
       console.log('bucketsss');
@@ -11,10 +13,24 @@ var CompanyModel = Backbone.Model.extend({
   },
 
   parse: function(response){
+    console.log('response');
+    console.log(response.startup_roles);
     if(response.startup_roles){
       return response.startup_roles;
     }
-    return response[0];
+  },
+
+  defaults: {
+    collectionStatus: false,
+    count: 0
+  },
+
+  updates: function(song){
+    console.log(this);
+
+    if(this.count === this.length){
+      this.collectionStatus = true;
+    }
   }
 });
 

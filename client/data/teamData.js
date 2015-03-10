@@ -1,20 +1,20 @@
-var founderData = [
+var teamData = [
     {
-      "id": 466004,
-      "role": "founder",
-      "created_at": "2013-01-15T04:36:22Z",
-      "started_at": null,
+      "id": 2255566,
+      "role": "employee",
+      "created_at": "2015-03-05T01:59:44Z",
+      "started_at": "2014-01-01",
       "ended_at": null,
-      "title": null,
+      "title": "Director, Inbound Marketing",
       "confirmed": true,
       "tagged": {
         "type": "User",
-        "name": "Tim Watson",
-        "id": 168114,
-        "bio": "iOS Developer at @radpad",
-        "follower_count": 24,
-        "angellist_url": "https://angel.co/timwatson",
-        "image": "https://d1qb2nb5cznatu.cloudfront.net/users/168114-medium_jpg?1405505825"
+        "name": "Jonathan D. Roberts",
+        "id": 1061820,
+        "bio": null,
+        "follower_count": 0,
+        "angellist_url": "https://angel.co/jonathan-d-roberts",
+        "image": "https://d1qb2nb5cznatu.cloudfront.net/users/1061820-medium_jpg?1425520371"
       },
       "startup": {
         "id": 118378,
@@ -34,12 +34,80 @@ var founderData = [
       }
     },
     {
-      "id": 329340,
-      "role": "founder",
-      "created_at": "2012-08-29T18:03:57Z",
+      "id": 1701223,
+      "role": "employee",
+      "created_at": "2014-09-19T16:46:36Z",
+      "started_at": "2014-07-01",
+      "ended_at": null,
+      "title": "Head of Marketing & Customer Service",
+      "confirmed": true,
+      "tagged": {
+        "type": "User",
+        "name": "Jeffrey Bishop",
+        "id": 248730,
+        "bio": null,
+        "follower_count": 42,
+        "angellist_url": "https://angel.co/jeffrey-bishop",
+        "image": "https://d1qb2nb5cznatu.cloudfront.net/users/248730-medium_jpg?1405545663"
+      },
+      "startup": {
+        "id": 118378,
+        "hidden": false,
+        "community_profile": false,
+        "name": "RadPad",
+        "angellist_url": "https://angel.co/radpad",
+        "logo_url": "https://d1qb2nb5cznatu.cloudfront.net/startups/i/118378-2af8b580f8eca61f987c4b4cbb7946a8-medium_jpg.jpg?buster=1405012141",
+        "thumb_url": "https://d1qb2nb5cznatu.cloudfront.net/startups/i/118378-2af8b580f8eca61f987c4b4cbb7946a8-thumb_jpg.jpg?buster=1405012141",
+        "quality": 8,
+        "product_desc": "RadPad was born from the founders' overwhelming frustration with renting.\n\nRadPad's a renter-driven mobile marketplace for Millennial renters that enables them to easily search and discover the most real-time inventory of apartments and homes for rent, seamlessly apply for and get their apartment and pay rent with a debit or credit card to any landlord.\n\nRadPad launched in January 2013 in Los Angeles and has since become the largest rental marketplace in the LA Metro Area. Taking a local approach to renting, RadPad has growth teams in Los Angeles, San Diego, San Francisco, Chicago, Washington DC, Miami and Houston.\n\nRadPad's obsessive focus on product innovation, user experience and mobile has helped make it one of the most downloaded apps in both Google Play & Apple App Stores.",
+        "high_concept": "RadPad makes renting easy!",
+        "follower_count": 326,
+        "company_url": "http://onradpad.com",
+        "created_at": "2012-08-29T17:56:03Z",
+        "updated_at": "2015-03-05T02:14:04Z"
+      }
+    },
+    {
+      "id": 1698169,
+      "role": "employee",
+      "created_at": "2014-09-18T17:38:47Z",
       "started_at": null,
       "ended_at": null,
       "title": null,
+      "confirmed": true,
+      "tagged": {
+        "type": "User",
+        "name": "Rita Ravindra",
+        "id": 57334,
+        "bio": "VP, Ops (biz dev, finance, ops) @radpad. Former VP, Ops @wittlebee. @myspace  for 4 years (int'l business, biz dev). Former i-banker. UofC Booth MBA. UCLA B.A.",
+        "follower_count": 314,
+        "angellist_url": "https://angel.co/rita-ravindra",
+        "image": "https://d1qb2nb5cznatu.cloudfront.net/users/57334-medium_jpg?1405474228"
+      },
+      "startup": {
+        "id": 118378,
+        "hidden": false,
+        "community_profile": false,
+        "name": "RadPad",
+        "angellist_url": "https://angel.co/radpad",
+        "logo_url": "https://d1qb2nb5cznatu.cloudfront.net/startups/i/118378-2af8b580f8eca61f987c4b4cbb7946a8-medium_jpg.jpg?buster=1405012141",
+        "thumb_url": "https://d1qb2nb5cznatu.cloudfront.net/startups/i/118378-2af8b580f8eca61f987c4b4cbb7946a8-thumb_jpg.jpg?buster=1405012141",
+        "quality": 8,
+        "product_desc": "RadPad was born from the founders' overwhelming frustration with renting.\n\nRadPad's a renter-driven mobile marketplace for Millennial renters that enables them to easily search and discover the most real-time inventory of apartments and homes for rent, seamlessly apply for and get their apartment and pay rent with a debit or credit card to any landlord.\n\nRadPad launched in January 2013 in Los Angeles and has since become the largest rental marketplace in the LA Metro Area. Taking a local approach to renting, RadPad has growth teams in Los Angeles, San Diego, San Francisco, Chicago, Washington DC, Miami and Houston.\n\nRadPad's obsessive focus on product innovation, user experience and mobile has helped make it one of the most downloaded apps in both Google Play & Apple App Stores.",
+        "high_concept": "RadPad makes renting easy!",
+        "follower_count": 326,
+        "company_url": "http://onradpad.com",
+        "created_at": "2012-08-29T17:56:03Z",
+        "updated_at": "2015-03-05T02:14:04Z"
+      }
+    },
+    {
+      "id": 1586527,
+      "role": "employee",
+      "created_at": "2014-08-12T22:05:21Z",
+      "started_at": null,
+      "ended_at": null,
+      "title": "Creative Director",
       "confirmed": true,
       "tagged": {
         "type": "User",
@@ -68,21 +136,21 @@ var founderData = [
       }
     },
     {
-      "id": 329328,
-      "role": "founder",
-      "created_at": "2012-08-29T17:56:03Z",
-      "started_at": null,
+      "id": 1348898,
+      "role": "employee",
+      "created_at": "2014-05-13T17:38:25Z",
+      "started_at": "2014-07-01",
       "ended_at": null,
-      "title": null,
+      "title": "FE Engineer | Designer",
       "confirmed": true,
       "tagged": {
         "type": "User",
-        "name": "Jonathan Eppers",
-        "id": 73968,
-        "bio": "Product Guy who obsesses about intuitive design. Building @radpad. ",
-        "follower_count": 145,
-        "angellist_url": "https://angel.co/jonathaneppers",
-        "image": "https://d1qb2nb5cznatu.cloudfront.net/users/73968-medium_jpg?1405479398"
+        "name": "Grayson Null",
+        "id": 600620,
+        "bio": "FE Engineer | Designer at RadPad.",
+        "follower_count": 8,
+        "angellist_url": "https://angel.co/grayson-null",
+        "image": "https://d1qb2nb5cznatu.cloudfront.net/users/600620-medium_jpg?1411066241"
       },
       "startup": {
         "id": 118378,

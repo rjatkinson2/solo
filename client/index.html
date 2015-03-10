@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>Welcome to Startupmash</h1>  
-    <h2>Round 1 - Name the Founders</h2>
-
+    <div class="round one">
+        <h1>Welcome to Startupmash</h1>  
+        <h2>Round 1 - Name the Founders</h2>
+    </div>
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
     below them until after the scripts load-->
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
 
-    <script src="data/data.js"></script>
+    <!----------------------------- Data ----------------------------->
+    <!-- Founder Data -->
     <script src="data/founderData.js"></script>
-    
-    <!-- <script src="models/EmployeeModel.js"></script> -->
-    <script src="models/FounderModel.js"></script>
-    <script src="models/SongModel.js"></script>
-    <script src="collections/Founders.js"></script>
-    <script src="collections/Songs.js"></script> 
-    <script src="collections/SongQueue.js"></script>
-    <script src="models/StartupModel.js"></script>
-    <script src="models/AppModel.js"></script>
+    <!-- Team Data -->
+    <script src="data/teamData.js"></script>
 
-    <script src="views/PlayerView.js"></script>
-    <script src="views/LibraryView.js"></script>
-    <script src="views/LibraryEntryView.js"></script>
+    <!---------------------------- Models ---------------------------->
+    <!-- Team Models -->
+    <script src="models/EmployeeModel.js"></script>
+    <script src="collections/Team.js"></script>
+    <!-- Founder Models -->
+    <script src="models/FounderModel.js"></script>
+    <script src="collections/Founders.js"></script>
+    <!-- Startup Model -->
+    <script src="models/StartupModel.js"></script>
+    
+    <!---------------------------- Views ---------------------------->
+    <!-- Team View -->
+    <script src="views/EmployeeView.js"></script>
+    <script src="views/TeamView.js"></script>
+    <!-- Founder View -->
     <script src="views/FounderView.js"></script>
-    <script src="views/SongQueueView.js"></script>
     <script src="views/FoundersView.js"></script>
-    <script src="views/SongQueueEntryView.js"></script>
+    <!-- Startup View -->
     <script src="views/StartupView.js"></script>
-    <script src="views/AppView.js"></script>
 
     <script>
       $(function(){
         var founders = new Founders(founderData);
-        var startupModel = new StartupModel({founders: founders});
+        var team = new Team(teamData);
+        var startupModel = new StartupModel({founders: founders, team: team});
 
         // set up model objects
         // var library = new Songs(songData);
@@ -45,7 +51,7 @@
         var startupView = new StartupView({model: startupModel});
 
         // put the view onto the screen
-        $('body').append(startupView.render());
+        $('div.one').append(startupView.render());
       });
     </script>
   </body>

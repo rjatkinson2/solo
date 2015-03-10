@@ -1,37 +1,46 @@
 var EmployeeModel = Backbone.Model.extend({
-  url: 'https://api.angel.co/1/startups/187453/roles?role=employee',
-  // parse: function(response) {
-  //     return response.results;
-  // },
-  sync: function(method, model, options) {
-      var that = this;
-          var params = _.extend({
-              type: 'GET',
-              dataType: 'jsonp',
-              url: that.url,
-              processData: false
-          }, options);
-
-      return $.ajax(params);
-  }
-});
-
-var employeeModel = new EmployeeModel();
-
-employeeModel.fetch({
-  success: function(model) {
-    console.log(employeeModel.get('attributes'));
-    console.log(model);
-    console.log('success!');
-    console.log(model.get('attributes'));
+  defaults:{
+    status: false
   },
-  error: function(model, xhr, options) {
-    console.log('Fetch error');
-  }
+
+  success: function(){
+    this.set('status', true);
+    this.trigger('success', this);
+  }  
 });
 
 
+// var EmployeeModel = Backbone.Model.extend({
+//   url: 'https://api.angel.co/1/startups/187453/roles?role=employee',
+//   // parse: function(response) {
+//   //     return response.results;
+//   // },
+//   sync: function(method, model, options) {
+//       var that = this;
+//           var params = _.extend({
+//               type: 'GET',
+//               dataType: 'jsonp',
+//               url: that.url,
+//               processData: false
+//           }, options);
 
+//       return $.ajax(params);
+//   }
+// });
+
+// var employeeModel = new EmployeeModel();
+
+// employeeModel.fetch({
+//   success: function(model) {
+//     console.log(employeeModel.get('attributes'));
+//     console.log(model);
+//     console.log('success!');
+//     console.log(model.get('attributes'));
+//   },
+//   error: function(model, xhr, options) {
+//     console.log('Fetch error');
+//   }
+// });
 
 
 

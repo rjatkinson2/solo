@@ -1,17 +1,29 @@
 // SongQueueEntryView.js - Defines a backbone view class for the song queue entries.
 var FounderView = Backbone.View.extend({
+  // defaults:{
+  //   correct: false
+  // },
 
-  template: _.template('<img src="<%= image %>"><input class="guess" placeholder="guess the name..."></input><p>does not match</p>'),
+  template: _.template('<img src="<%= image %>"><input class="guess" placeholder="guess the name..."></input><p><%- correct %></p>'),
 
   events: {
     'change input.guess': function() {
       console.log('hellsyea!');
-    //if(input.guess.val() === this.model.get('tagged')){}
+      var test = this.$el.children('input.guess').val();
+      console.log(test === 'changeme');
+      if(test === 'changeme'){
+        this.model.success();
+        this.render();
+      }
     }
   },
 
   render: function(){
-    return this.$el.append(this.template(this.model.get('tagged')));
+    this.$el.empty();
+    var params = this.model.get('tagged');
+    params.correct = this.model.get('status');
+    return this.$el.append(this.template(params));
   }
+
 
 });

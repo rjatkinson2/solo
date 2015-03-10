@@ -12,7 +12,7 @@ var StartupView = Backbone.View.extend({
 
   render: function(){
     return this.$el.html([
-      this.foundersView.render()
+      this.foundersView.render('Not Complete')
       // this.investorsView.$el,
       // this.teamView.$el,
       // this.miscView.$el

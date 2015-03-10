@@ -2,18 +2,19 @@
 var FoundersView = Backbone.View.extend({
   className: 'founders-collection',
   initialize: function() {
-    // this.collection.on('add remove', this.render, this);
-    // this.render();
+    this.collection.on('change', function(check){
+      if(this.collection.where({status: true}).length === this.collection.length){
+        this.render('Complete!');
+      }
+    }, this);
   },
 
-  render: function() {
-    // this.$el.children().detach();
-    console.log('anything');
+  render: function(status) {
     return this.$el.html(
       this.collection.map(function(founder){
         return new FounderView({model: founder}).render();
       })
-    );
+    ).append('<p>' + status + '</p>');
   }
 
 });

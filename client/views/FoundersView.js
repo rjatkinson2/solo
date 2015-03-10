@@ -5,6 +5,7 @@ var FoundersView = Backbone.View.extend({
     this.collection.on('change', function(check){
       if(this.collection.where({status: true}).length === this.collection.length){
         this.render('Round 1 Complete!');
+        this.trigger('newStuff', this);
       }
     }, this);
   },

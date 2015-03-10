@@ -2,9 +2,12 @@
 <html>
   <body>
     <div class="round one">
-        <h1>Welcome to Startupmash</h1>
-        <h2>Select a company</h2>
-        <input class="search" type="text">
+      <h1>Welcome to Startupmash</h1>
+      <h2>Select a company</h2>
+      <form action="" id="search-form">
+        <input type="text" id="search" name="search" />
+        <input type="submit" id="search-submit" value="Pick Your Company!" />
+      </form>
     </div>
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
     below them until after the scripts load-->
@@ -41,14 +44,19 @@
 
     <script>
       $(function(){
+        var company;
 
+        $("#search-form").submit(function(e){
+          e.preventDefault();
+          var input = $("#search");
+          company = new CompanyModel({'query' : 'query='+ input.val() +'&type=Startup'});
+          company.fetch({dataType: "jsonp"});
+          input.val('');
+        });
+        
         var founders = new Founders(founderData);
         var team = new Team(teamData);
-        var startupModel = new StartupModel({founders: founders, team: team});
-
-        // set up model objects
-        // var library = new Songs(songData);
-        // var app = new AppModel({library: library});
+        var startupModel = new StartupModel({company: company, founders: founders, team: team});
 
         // build a view for the top level of the whole app
         var startupView = new StartupView({model: startupModel});

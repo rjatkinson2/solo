@@ -1,5 +1,6 @@
 // App.js - Defines a backbone model class for the whole app.
 var StartupModel = Backbone.Model.extend({
+  
 
   initialize: function(params){
     // this.set('founders', new Founders()); -> already instantiated on index.html

@@ -1,8 +1,6 @@
 var CompanyModel = Backbone.Model.extend({
   initialize: function(params){
     this.on('change', function(model){
-      console.log('omgomgomgomg');
-      console.log(this.urlRoot);
       console.log(model);
     },this);
   },
@@ -15,11 +13,6 @@ var CompanyModel = Backbone.Model.extend({
     return response[0];
   }
 });
-
-
-
-var company = new CompanyModel({'query' : 'query=radpad&type=Startup'});
-company.fetch({dataType: "jsonp"});
 
 
 

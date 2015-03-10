@@ -3,12 +3,15 @@
   <body>
     <div class="round one">
         <h1>Welcome to Startupmash</h1>
+        <h2>Select a company</h2>
+        <input class="search" type="text">
     </div>
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
     below them until after the scripts load-->
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
+    <script src="models/CompanyModel.js"></script>
 
     <!----------------------------- Data ----------------------------->
     <!-- Founder Data -->
@@ -38,6 +41,7 @@
 
     <script>
       $(function(){
+
         var founders = new Founders(founderData);
         var team = new Team(teamData);
         var startupModel = new StartupModel({founders: founders, team: team});

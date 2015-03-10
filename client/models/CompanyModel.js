@@ -1,11 +1,16 @@
 var CompanyModel = Backbone.Model.extend({
-  urlRoot: 'https://api.angel.co/1/search?query=radpad&type=Startup',
-  initialize: function(){
-    this.on('change', function(what){
+  initialize: function(params){
+    this.on('change', function(model){
       console.log('omgomgomgomg');
-      console.log(what);
+      console.log(this.urlRoot);
+      console.log(model);
     },this);
   },
+
+  urlRoot: function(){
+    return 'https://api.angel.co/1/search?' + this.get('query');
+  },
+
   parse: function(response){
     return response[0];
   }
@@ -13,7 +18,7 @@ var CompanyModel = Backbone.Model.extend({
 
 
 
-var company = new CompanyModel();
+var company = new CompanyModel({'query' : 'query=radpad&type=Startup'});
 company.fetch({dataType: "jsonp"});
 
 

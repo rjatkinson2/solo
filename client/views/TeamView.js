@@ -14,7 +14,7 @@ var TeamView = Backbone.View.extend({
       this.collection.map(function(team){
         return new EmployeeView({model: team}).render();
       })
-    ).append('<p>' + status + '</p>');
+    ).prepend('<h1>Round 2 - Name the Employees!</h1>').append('<p>' + status + '</p>');
   }
 
 });

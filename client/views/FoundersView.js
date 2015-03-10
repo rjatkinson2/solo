@@ -16,7 +16,7 @@ var FoundersView = Backbone.View.extend({
       this.collection.map(function(founder){
         return new FounderView({model: founder}).render();
       })
-    ).prepend('<h2>Round 1 - Name the Founders!</h2>').append('<p>' + status + '</p>');
+    ).prepend('<h2>Round 1 - Name the Founders!</h2>').append('<h2>' + status + '</h2>');
   }
 
 });

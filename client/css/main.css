@@ -1,7 +1,16 @@
+body{
+  background-color: #18A497;
+}
+
 h1,h2,h3,h4,h5,h6,p{
   font-family: 'Exo 2', sans-serif;
   font-weight: 200;
   color: white;
+}
+
+p{
+  display: inline-block;
+  clear: both;
 }
 
 h1{
@@ -19,6 +28,9 @@ div.search{
 
 .startupView{
   padding-left: 30px;
+}
+
+.startupView:nth-child(1){
   background-color: #18A497;
 }
 
@@ -35,10 +47,6 @@ input[type=text] {
   border-bottom: 1px solid #FFFFFF;
   display: inline-block;
   width: 100%;
-}
-
-h2{
-
 }
 
 

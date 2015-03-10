@@ -1,6 +1,7 @@
 // SongQueueView.js - Defines a backbone view class for the song queue.
 var TeamView = Backbone.View.extend({
-  className: 'team-collection',
+  tagName: 'ul',
+  className: 'small-block-grid-3',
   initialize: function(params) {
     this.collection.on('change', function(check){
       if(this.collection.where({status: true}).length === this.collection.length){
@@ -14,7 +15,7 @@ var TeamView = Backbone.View.extend({
       this.collection.map(function(team){
         return new EmployeeView({model: team}).render();
       })
-    ).prepend('<h1>Round 2 - Name the Employees!</h1>').append('<p>' + status + '</p>');
+    ).prepend('<h2>Round 2 - Name the Employees!</h2>').append('<h2>' + status + '</h2>');
   }
 
 });

@@ -14,7 +14,7 @@ var StartupView = Backbone.View.extend({
   },
 
   render: function(thing){
-    return this.$el.append([
+    return this.$el.html('<div></div>').append([
       thing
       // this.investorsView.$el,
       // this.teamView.$el,

@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/main.css">
+    </head>
   <body>
     <div class="search">
       <h1>Welcome to Startupmash</h1>
@@ -82,7 +94,7 @@
                       // put the view onto the screen
                       console.log(startupView);
                       console.log(startupView.foundersView);
-                      $('div.one').empty().append(startupView.render(startupView.foundersView.render('Not Complete!')));
+                      $('div.one').empty().append(startupView.render(startupView.foundersView.render('Not Complete!'))).slideDown('slow');
                     
                     }
                   });

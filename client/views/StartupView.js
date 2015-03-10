@@ -6,10 +6,12 @@ var StartupView = Backbone.View.extend({
     this.foundersView = new FoundersView({collection: this.model.get('founders')});
     // this.investorsView = new InvestorsView({collection: this.model.get('investors')});
     this.teamView = new TeamView({collection: this.model.get('team')});
-    // this.miscView = new MiscView({collection: this.model.get('misc')});
-    //console.log(this.model.get('founders'));
+    this.miscView = new MiscView();
     this.foundersView.on('newStuff', function(){
       this.render(this.teamView.render('Not Complete'));
+    }, this);
+    this.teamView.on('newStuff', function(){
+      this.render(this.miscView.render('Not Complete'));
     }, this);
   },
 

@@ -37,13 +37,10 @@
     <script src="../bower_components/backbone/backbone.js"></script>
     <script src="models/CompanyModel.js"></script>
 
-    <!----------------------------- Data ----------------------------->
-    <!-- Founder Data -->
-    <script src="data/founderData.js"></script>
-    <!-- Team Data -->
-    <script src="data/teamData.js"></script>
-
     <!---------------------------- Models ---------------------------->
+    <!-- Misc Models -->
+    <script src="models/MiscModel.js"></script>
+    <script src="collections/Misc.js"></script>
     <!-- Team Models -->
     <script src="models/EmployeeModel.js"></script>
     <script src="collections/Team.js"></script>
@@ -55,6 +52,9 @@
     <script src="models/StartupModel.js"></script>
     
     <!---------------------------- Views ----------------------------->
+    <!-- Misc View -->
+    <script src="views/MiscView.js"></script>
+    <script src="views/MiscsView.js"></script>
     <!-- Team View -->
     <script src="views/EmployeeView.js"></script>
     <script src="views/TeamView.js"></script>
@@ -99,14 +99,14 @@
                       var startupView = new StartupView({model: startupModel});
 
                       // put the view onto the screen
-                      console.log(startupView);
-                      console.log(startupView.foundersView);
                       $('div.one').empty().append(startupView.render(startupView.foundersView.render('Not Complete!')));
 
                       round3.fetch({
                         dataType: "jsonp",
                         success: function(collection, resp){
                           console.log(resp.funding);
+                          misc = new Misc(resp.funding);
+                          startupModel.set('misc', misc);
                         }
                       });
                     }

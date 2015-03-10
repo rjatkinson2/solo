@@ -1,5 +1,5 @@
-var Founders = Backbone.Collection.extend({
-  model: FounderModel,
+var Misc = Backbone.Collection.extend({
+  model: MiscModel,
   
   defaults: {
     collectionStatus: false,

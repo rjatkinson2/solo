@@ -1,4 +1,4 @@
-var EmployeeModel = Backbone.Model.extend({
+var MiscModel = Backbone.Model.extend({
   defaults:{
     status: false
   },

@@ -3,8 +3,6 @@ var FoundersCollection = Backbone.Model.extend({
   initialize: function(params){
     this.on('success', this.updates, this);
     this.on('change', function(model){
-      console.log(model);
-      console.log('bucketsss');
     },this);
   },
 
@@ -13,8 +11,6 @@ var FoundersCollection = Backbone.Model.extend({
   },
 
   parse: function(response){
-    console.log('response');
-    console.log(response.startup_roles);
     if(response.startup_roles){
       return response.startup_roles;
     }
@@ -26,8 +22,6 @@ var FoundersCollection = Backbone.Model.extend({
   },
 
   updates: function(song){
-    console.log(this);
-
     if(this.count === this.length){
       this.collectionStatus = true;
     }

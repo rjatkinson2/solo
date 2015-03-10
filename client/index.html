@@ -9,6 +9,7 @@
         <link href='http://fonts.googleapis.com/css?family=Exo+2:200italic,200' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/foundation.css" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="css/main.css">
@@ -79,7 +80,7 @@
 
               round1 = new FoundersCollection({'query' : 'startups/'+ stuff.get('id') +'/roles?role=founder'});
               round2 = new FoundersCollection({'query' : 'startups/'+ stuff.get('id') +'/roles?role=employee'});
-              round2 = new FoundersCollection({'query' : 'startups/'+ stuff.get('id') +'/roles?role=employee'});
+              round3 = new FoundersCollection({'query' : 'startups/'+ stuff.get('id') +'/funding'});
               
               round1.fetch({
                 dataType: "jsonp",
@@ -90,8 +91,8 @@
                   round2.fetch({
                     dataType: "jsonp",
                     success: function(collection, resp){
-                      
                       team = new Team(resp.startup_roles);
+
                       var startupModel = new StartupModel({company: company, founders: founders, team: team});
 
                       // build a view for the top level of the whole app
@@ -101,7 +102,13 @@
                       console.log(startupView);
                       console.log(startupView.foundersView);
                       $('div.one').empty().append(startupView.render(startupView.foundersView.render('Not Complete!')));
-                    
+
+                      round3.fetch({
+                        dataType: "jsonp",
+                        success: function(collection, resp){
+                          console.log(resp.funding);
+                        }
+                      });
                     }
                   });
 

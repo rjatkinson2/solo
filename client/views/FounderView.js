@@ -8,10 +8,9 @@ var FounderView = Backbone.View.extend({
 
   events: {
     'change input.guess': function() {
-      console.log('hellsyea!');
       var test = this.$el.children('input.guess').val();
-      console.log(test === 'changeme');
-      if(test === 'changeme'){
+      var answer = this.model.get('tagged').name.split(' ')[0];
+      if(test === answer){
         this.model.success();
         this.render();
       }
